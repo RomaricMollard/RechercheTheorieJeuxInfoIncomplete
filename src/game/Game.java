@@ -48,7 +48,30 @@ public class Game {
 		int pnb = params.getPlayers_nb();
 		int cnb = params.getCards_nb();
 		
+		int formula = cnb * ( (int) Math.pow(2, pnb) - 1 );
+		
+		if(this.params.isFirst_player_rotate()){
+			
+		}
+		
 		return pnb * cnb * ( (int) Math.pow(2, pnb) - 1 );
+		
+	}
+	
+	/*
+	 * Calcule le nombre total de jeux possibles
+	 */
+	public int countGames(){
+		
+		int pnb = params.getPlayers_nb();
+		int cnb = params.getCards_nb();
+		
+		int factorial_div = 1;
+		for(int i=0; i<pnb; i++){
+			factorial_div *= cnb-i;
+		}
+		
+		return (int) Math.pow(2, pnb) * factorial_div;
 		
 	}
 	

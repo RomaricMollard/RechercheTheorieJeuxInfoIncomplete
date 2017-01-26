@@ -14,7 +14,8 @@ public class testGame {
 		Game game = new Game(param);
 		
 		System.out.println(game.countProbas());
-
+		System.out.println(game.countGames());
+		
 	}
 
 }
