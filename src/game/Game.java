@@ -29,7 +29,8 @@ public class Game {
 					new ProbaSet(
 						this.params.getCards_nb(),
 						this.params.getPlayers_nb()
-					)
+					),
+					this
 				);
 			
 			players.add(player);
@@ -51,10 +52,10 @@ public class Game {
 		int formula = cnb * ( (int) Math.pow(2, pnb) - 1 );
 		
 		if(this.params.isFirst_player_rotate()){
-			
+			formula *= pnb;
 		}
 		
-		return pnb * cnb * ( (int) Math.pow(2, pnb) - 1 );
+		return formula;
 		
 	}
 	
@@ -76,4 +77,13 @@ public class Game {
 	}
 	
 
+	/* getters setters */
+	
+	public ArrayList<Player> getPlayers(){
+		return this.players;
+	}
+	
+	public Param getParams(){
+		return this.params;
+	}
 }

@@ -31,6 +31,7 @@ public class ProbaSet {
 			}
 			
 			this.probaSet.add(proba_for_card);
+
 		}
 		
 	}
@@ -42,7 +43,7 @@ public class ProbaSet {
 	 * @return
 	 */
 	public Proba getProba(int position, int state, int card){
-		return this.probaSet.get(card).get(position).get(state);
+		return this.probaSet.get(card-1).get(position).get(state);
 	}
 	
 }
